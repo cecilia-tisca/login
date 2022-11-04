@@ -2,6 +2,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+  "paths":{
+    "crypto":["node_modules/crypto-js"],
+    "zlib": ["node_modules/body-parser/lib"]
+    
+   },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

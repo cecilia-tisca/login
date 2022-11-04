@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AngularFireAuth } from '@angular/fire/compat/auth'
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { ErrorfirebaseService } from 'src/app/service/errorfirebase.service';
 
 
 
@@ -13,11 +14,13 @@ import { Router } from '@angular/router';
 })
 export class RegistrarUserComponent implements OnInit {
   registrarUser: FormGroup;
+  loading: boolean = false;
 
   constructor(private fb: FormBuilder, 
-    private afAuth: AngularFireAuth, 
+    private afAuth: AngularFireAuth,
     private toastr: ToastrService, 
-    private router: Router ) {
+    private router: Router,
+    private Errorfirebase : ErrorfirebaseService ) {
     this.registrarUser = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
@@ -34,32 +37,26 @@ export class RegistrarUserComponent implements OnInit {
     const repetirpassword = this.registrarUser.value.repetirpassword;
 
     if(password !== repetirpassword){
-      alert('El usuario fue registrado con Exito');
-      alert('Las contraseñas ingresadas deben ser las mismas')
+      this.toastr.error('Las contraseñas ingresadas deben ser las mismas', 'Error');
+      // alert('El usuario fue registrado con Exito');
+      // alert('Las contraseñas ingresadas deben ser las mismas')
       return;
     }
 
+    this.loading = true;
     this.afAuth.createUserWithEmailAndPassword(email, password)
     .then((user) => {
+      this.loading = false;
       this.router.navigate(['/login']);
       console.log(user);
+
     }).catch((error) => {
+      this.loading = false;
       console.log(error);
-      alert(this.firebaseError(error.code));
+      //alert(this.Errorfirebase.Errorfirebase(error.code));
+      this.toastr.error(this.Errorfirebase.Errorfirebase(error.code));
     })
   }
 
-  firebaseError(code: String){
-    switch(code) {
-      case 'auth/email-already-in-use':
-        return 'El usuario ya existe';
-      case 'auth/weak-password':
-        return 'La contraseña es muy debil'; 
-      case 'auth/invalid-email':
-        return 'Correo invalido';   
-      default:
-        return 'Error desconocido'
-    }
-  }
 
 }
