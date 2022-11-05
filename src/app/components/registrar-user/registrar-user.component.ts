@@ -23,7 +23,7 @@ export class RegistrarUserComponent implements OnInit {
     private Errorfirebase : ErrorfirebaseService ) {
     this.registrarUser = this.fb.group({
       email: ['', Validators.required],
-      password: ['', Validators.required],
+      password: ['', [Validators.required,Validators.minLength(8)]],
       repetirpassword: ['', Validators.required]
     })
    }
@@ -54,7 +54,7 @@ export class RegistrarUserComponent implements OnInit {
       this.loading = false;
       console.log(error);
       //alert(this.Errorfirebase.Errorfirebase(error.code));
-      this.toastr.error(this.Errorfirebase.Errorfirebase(error.code));
+      this.toastr.error(this.Errorfirebase.Errorfirebase(error.code), 'Error');
     })
   }
 

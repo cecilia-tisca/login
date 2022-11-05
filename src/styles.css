@@ -7,7 +7,7 @@ html, body {
     align-items: center;
     justify-content: center;
     height: 100%;
-    background-color: rgb(29, 202, 255);
+    background-color: rgb(105, 179, 202);
 }
 
 .logo {
@@ -21,4 +21,12 @@ html, body {
     margin: auto;
     padding: 30px;
     text-align: center;
+}
+
+.form-floating {
+    text-align: start;
+}
+
+.errorLabel {
+    margin-left: 5px;
 }

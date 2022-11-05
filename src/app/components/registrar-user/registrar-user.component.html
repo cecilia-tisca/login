@@ -6,10 +6,23 @@
             <div class="form-floating mb-3">
                 <input type="email" class="form-control" formControlName="email" placeholder="name@example.com">
                 <label>Email</label>
+                <span class="text-danger errorLabel">
+                  El <strong>correo </strong> es requerido
+                </span>
               </div>
               <div class="form-floating mb-3">
                 <input type="password" class="form-control" formControlName="password" placeholder="Password">
                 <label>Password</label>
+                <span *ngIf="registrarUser.get('password')?.hasError('required') && registrarUser.get('password')?.touched" class="text-danger errorLabel">
+                  La <strong>Contraseña </strong> es requerida
+                </span>
+                <span *ngIf="registrarUser.get('password')?.hasError('minlength') && registrarUser.get('password')?.touched" class="text-danger errorLabel">
+                  La <strong>Contraseña </strong> debe tener mínimo 8 carácteres
+                </span>
+                <span *ngIf="registrarUser.get('password')?.hasError('pattern') && registrarUser.get('password')?.touched" class="text-danger errorLabel">
+                  La <strong>Contraseña </strong> debe tener una letra Mayuscula
+                </span>
+               
               </div>
               <div class="form-floating mb-3">
                 <input type="password" class="form-control" formControlName="repetirpassword" placeholder="Confirmar Password">

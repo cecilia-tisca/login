@@ -19,9 +19,17 @@ export class ErrorfirebaseService {
       
         //Correo invalido
         case 'auth/invalid-email':
-        return 'Correo invalido';   
+        return 'Correo invalido'; 
+        
+        //Contraseña incorrecta
+        case 'auth/wrong-password':
+        return 'Contraseña incorrecta';
+
+        //El usuario no existe
+        case 'auth/user-not-found':
+          return 'El usuario no existe';
       default:
-        return 'Error desconocido'
+        return 'Error desconocido'  
     }
   }
     }
