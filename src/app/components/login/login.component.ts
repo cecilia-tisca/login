@@ -34,7 +34,11 @@ login(){
 
   this.loading = true;
   this.afAuth.signInWithEmailAndPassword(email, password).then((user) => {
-    this.router.navigate(['/dashboard'])
+   if(user.user?.emailVerified){
+   this.router.navigate(['/dashboard'])
+   }else {
+    this.router.navigate(['/verificar-email'])
+   }
   }).catch((error) => {
     this.loading = false;
     console.log(error);
