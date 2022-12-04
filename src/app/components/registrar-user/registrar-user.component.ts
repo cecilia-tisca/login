@@ -49,7 +49,7 @@ export class RegistrarUserComponent implements OnInit {
 
     this.loading = true;
     this.afAuth.createUserWithEmailAndPassword(email, password)
-      .then((user) => {
+      .then(() => {
         this.verificarCorreo();
 
       }).catch((error) => {

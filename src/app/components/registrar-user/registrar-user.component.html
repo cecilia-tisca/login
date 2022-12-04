@@ -19,9 +19,9 @@
                 <span *ngIf="registrarUser.get('password')?.hasError('minlength') && registrarUser.get('password')?.touched" class="text-danger errorLabel">
                   La <strong>Contraseña </strong> debe tener mínimo 8 carácteres
                 </span>
-                <span *ngIf="registrarUser.get('password')?.hasError('pattern') && registrarUser.get('password')?.touched" class="text-danger errorLabel">
+                <!-- <span *ngIf="registrarUser.get('password')?.hasError('pattern') && registrarUser.get('password')?.touched" class="text-danger errorLabel">
                   La <strong>Contraseña </strong> debe contener una letra Mayuscula, una minuscula y un numero.
-                </span>
+                </span> -->
       
               </div>
               <div class="form-floating mb-3">
@@ -29,7 +29,7 @@
                 <label>Confirm Password</label>
               </div>
               <div class="d-grid gap-2">
-                <button class="btn btn-primary btn-lg" [disabled]="registrarUser.invalid" type="submit">Registrar</button>
+                <button class="btn btn-primary btn-lg"  type="submit">Registrar</button>
               </div>
               <a routerLink="/login">Volver</a>
         </form>

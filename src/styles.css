@@ -30,3 +30,13 @@ html, body {
 .errorLabel {
     margin-left: 5px;
 }
+
+.portada {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .component-presentacion {
+    background-color: rgba(57, 44, 175, 0.582);
+} */

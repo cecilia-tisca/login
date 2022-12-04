@@ -5,15 +5,17 @@ import { LoginComponent } from './components/login/login.component';
 import { RecuperarPassComponent } from './components/recuperar-pass/recuperar-pass.component';
 import { RegistrarUserComponent } from './components/registrar-user/registrar-user.component';
 import { VerificarEmailComponent } from './components/verificar-email/verificar-email.component';
+import { PresentacionComponent } from './components/presentacion/presentacion.component';
 
 const routes: Routes = [
-  {path:'', redirectTo: 'login', pathMatch: 'full'},
+  {path:'', redirectTo: 'presentacion', pathMatch: 'full'},
   {path:'login', component: LoginComponent},
   {path:'registrar-user', component: RegistrarUserComponent},
   {path:'verificar-email', component: VerificarEmailComponent},
   {path:'recuperar-pass', component: RecuperarPassComponent},
   {path:'dashboard', component: DashboardComponent},
-  {path:'**', redirectTo: 'login', pathMatch: 'full'},
+  {path: 'presentacion', component: PresentacionComponent},
+  {path:'**', redirectTo: 'presentacion', pathMatch: 'full'},
 
 ];
 

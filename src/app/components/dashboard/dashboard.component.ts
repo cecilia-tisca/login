@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { BebidasService } from 'src/app/service/bebidas.service';
 
 
 @Component({
@@ -9,19 +10,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  bebidaList: any[] = [];
 dataUser: any;
+
   constructor(private afAuth: AngularFireAuth, 
-    private router: Router) { }
+    private router: Router,
+    private bebidaService: BebidasService) { }
 
   ngOnInit(): void {
-    this.afAuth.currentUser.then(user => {
-      if(user && user.emailVerified) {
-        this.dataUser = user;
-      }else {
-        this.router.navigate(['/login'])
+    console.log('Componente inisializado');
+    this.bebidaService.getBebidas()
+    .subscribe((response: any) => console.log(response)
+    )
 
-      }
-    })
+    // this.afAuth.currentUser.then(user => {
+    //   if(user && user.emailVerified) {
+    //     this.dataUser = user;
+    //   }else {
+    //     this.router.navigate(['/login'])
+
+    //   }
+    // })
+    
   }
 
   logOut () {
