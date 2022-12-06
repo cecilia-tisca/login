@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BebidasService {
 
-  private url: string = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
+  // private url: string = "https://api.covidtracking.com"
 
   constructor(private http: HttpClient){}
 
@@ -22,6 +22,6 @@ export class BebidasService {
   // }
 
   getBebidas(): any {
-    return this.http.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita');
+    return this.http.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s');
   }
 }

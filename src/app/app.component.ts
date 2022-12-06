@@ -10,6 +10,7 @@ import { BebidasService } from './service/bebidas.service';
 export class AppComponent implements OnInit{
   title = 'login';
     bebidaList: any = [];
+    
   
   // nombre: string | undefined;
 
@@ -22,8 +23,12 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     console.log('Componente inisializado');
     this.bebidaService.getBebidas()
-    .subscribe((response: any) => this.bebidaList = response)
+    .subscribe(( response:any)  => {
+      this.bebidaList = response
+
+    })
   }
+
 
   // search(){
   //   this.bebidaService.getBebidas(this.name)

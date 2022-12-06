@@ -17,11 +17,14 @@ dataUser: any;
     private router: Router,
     private bebidaService: BebidasService) { }
 
-  ngOnInit(): void {
-    console.log('Componente inisializado');
-    this.bebidaService.getBebidas()
-    .subscribe((response: any) => console.log(response)
-    )
+    ngOnInit(): void {
+      console.log('Componente inisializado');
+      this.bebidaService.getBebidas()
+      .subscribe(( response:any)  => {
+        this.bebidaList = response.drinks
+        console.log(response.drinks)
+      })
+    }
 
     // this.afAuth.currentUser.then(user => {
     //   if(user && user.emailVerified) {
@@ -32,7 +35,7 @@ dataUser: any;
     //   }
     // })
     
-  }
+  
 
   logOut () {
     this.afAuth.signOut().then(() => this.router.navigate(['/login']))
