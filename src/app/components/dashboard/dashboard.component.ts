@@ -24,18 +24,18 @@ dataUser: any;
         this.bebidaList = response.drinks
         console.log(response.drinks)
       })
-    }
-
-    // this.afAuth.currentUser.then(user => {
-    //   if(user && user.emailVerified) {
-    //     this.dataUser = user;
-    //   }else {
-    //     this.router.navigate(['/login'])
-
-    //   }
-    // })
     
-  
+
+    this.afAuth.currentUser.then(user => {
+      if(user && user.emailVerified) {
+        this.dataUser = user;
+      }else {
+        this.router.navigate(['/login'])
+
+      }
+    })
+    
+  }
 
   logOut () {
     this.afAuth.signOut().then(() => this.router.navigate(['/login']))
