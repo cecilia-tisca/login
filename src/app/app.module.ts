@@ -20,6 +20,7 @@ import { RecuperarPassComponent } from './components/recuperar-pass/recuperar-pa
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { environment } from 'src/environments/environment';
 import { PresentacionComponent } from './components/presentacion/presentacion.component';
+import { PresentationComponent } from './components/presentation/presentation.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PresentacionComponent } from './components/presentacion/presentacion.co
     VerificarEmailComponent,
     RecuperarPassComponent,
     SpinnerComponent,
-    PresentacionComponent
+    PresentacionComponent,
+    PresentationComponent
   ],
   imports: [
     BrowserModule,

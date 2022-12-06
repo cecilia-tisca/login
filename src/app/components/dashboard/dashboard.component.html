@@ -5,13 +5,9 @@
       </a>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 link-secondary">Hogar</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">Características</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">Precios</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">preguntas frecuentes</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">Sobre</a></li>
-        <li><a><input type="text" class="nav-link px-2 link-dark"></a></li>
-        <li><button  class="nav-link px-2 link-dark">Search</button></li>
+        <li><a href='/dashboard' class="nav-link px-2 link-secondary">Hogar</a></li>
+        <li><a href="/presentation" class="nav-link px-2 link-dark">Sobre...</a></li>
+        
 
       </ul>
 
@@ -19,48 +15,48 @@
         <button type="button" class="btn btn-outline-primary me-2" (click)="logOut()">LogOut</button>
       </div>
     </header>
-   
-      <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-        <h1>Bienvenido</h1>
-        <br>
-         <!-- <div *ngFor="let bebida of bebidaList" >
-            <ul>
-              <li >Nombre: {{bebida.strDrink}}</li>
-              <li>Id: {{bebida.idDrink}}</li>
-              <li><img src="{{bebida.strDrinkThumb}}" width="100" height="100" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">{{bebida.strDrink}}</h5>
-              </div></li>
+   <body>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1>Bienvenido</h1>
+          <br>
+          <!-- <div *ngFor="let bebida of bebidaList" >
+              <ul>
+                <li >Nombre: {{bebida.strDrink}}</li>
+                <li>Id: {{bebida.idDrink}}</li>
+                <li><img src="{{bebida.strDrinkThumb}}" width="100" height="100" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{bebida.strDrink}}</h5>
+                </div></li>
 
-            </ul> 
-          </div> -->
-          <!-- <div class="container text-center">
-            <div class="card" style="width: 18rem;" *ngFor="let bebida of bebidaList"  >
-              <div class="row mt-4"></div>
-              <div class="row mt-2">
-                <img src="{{bebida.strDrinkThumb}}" width="100%" height="100%" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Nombre: {{bebida.strDrink}}</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-              </div>   
-              </div>
-          </div> -->
-          <div class="container">
-            <div class="row mt-4">
-            </div>
-            <div class="row mt-2">
-              <div class="col-4 mt-2" *ngFor="let bebida of bebidaList">
-                <div class="card" style="width: 18rem;">
+              </ul> 
+            </div> -->
+            <!-- <div class="container text-center">
+              <div class="card" style="width: 18rem;" *ngFor="let bebida of bebidaList"  >
+                <div class="row mt-4"></div>
+                <div class="row mt-2">
                   <img src="{{bebida.strDrinkThumb}}" width="100%" height="100%" alt="...">
-                  <div class="card-body">
-                    <h5>Nombre: {{bebida.strDrink}}</h5>
-                    <h5>ID: {{bebida.idDrink}}</h5>
-                  </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Nombre: {{bebida.strDrink}}</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>   
+                </div>
+            </div> -->
+            <div class="container">
+              <div class="row mt-4">
+              </div>
+              <div class="row mt-2">
+                <div class="col-4 mt-2" *ngFor="let bebida of bebidaList">
+                  <div class="card" style="width: 18rem;">
+                    <img src="{{bebida.strDrinkThumb}}" width="100%" height="100%" alt="...">
+                    <div class="card-body">
+                      <h5>Nombre: {{bebida.strDrink}}</h5>
+                      <h5>ID: {{bebida.idDrink}}</h5>
+                    </div>
+                  </div>  
                 </div>  
-               </div>  
+              </div>
             </div>
-          </div>
-    </div> 
-
+      </div> 
+    </body>
   </div>
