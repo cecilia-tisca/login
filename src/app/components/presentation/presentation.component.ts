@@ -14,14 +14,7 @@ export class PresentationComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.afAuth.currentUser.then(user => {
-      if(user && user.emailVerified) {
-        this.dataUser = user;
-      }else {
-        this.router.navigate(['/login'])
-
-      }
-    })
+    
   }
 
   logOut () {
